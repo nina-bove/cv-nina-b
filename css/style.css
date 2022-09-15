@@ -1,10 +1,10 @@
 /*Här har jag importerat en font från Google fonts så att jag kan använda den i min CSS */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
 
-*{ /*Jag kommer ha samma font och mellanrum mellan bokstäverna på alla element*/
+*{ /*Jag kommer ha samma font och mellanrum mellan bokstäverna på alla element och 0 padding och margin*/
     margin: 0;
     padding: 0;
-    font-family: Orbitron, sans-serif; 
+    font-family: Orbitron; 
     letter-spacing: 0.1em;
 }
 
@@ -25,9 +25,8 @@ body { /* Här står sånt som påverkar alla element inom body-elementet, dvs a
 
 h1 {
     font-size: 60px; /* Textstorlek på alla h1-element dvs största rubrikerna*/
-    font-family: Orbitron, sans-serif; /*Onödig, ta bort senare*/
     color: rgba(255,255,255); /* Textfärg för h1-element*/
-    padding: 0;
+    padding: 0; /*ingen padding*/
     margin: 0.5em; /* Hur mycket avstånd mellan detta elementet och andra. em är ett mått/enhet som beror på textstorleken*/
     text-shadow: 0.05em 0.1em rgba(11, 75, 79, 0.75); /*Skugga bakom texten för att få en 3D effekt. 
     3 första talen i parantesen efter rgba bestämmer färgen, fjärde bestämmer transparens (skala 0 till 1).
@@ -93,10 +92,6 @@ ul {
 .menu-current-tab { /* En linje under den sida/tab man är inne på. Border är egentligen en kant/ram med upp 4 sidor man kan styla.
     Jag stylar bara border-bottom så det syns som en enkel vit linje under texten i navbaren*/
     border-bottom: 1px rgb(255, 255, 255) solid; /*Tjocklek, färg och style på linjen*/
-}
-
-.menu-tabs ul li a { /* Onödig, ta bort senare*/
-    color: white;
 }
 
 .text-box { /*Textrutor för p-element och ul-element, deras färg, storlek och placering*/
@@ -195,42 +190,6 @@ ul {
 }
 
 
-.autumn-img { /*Storlek, placering och skugga för autumn-img för "Om mig"-tabben*/
-    max-width: 200px;
-    position: fixed;
-    top: 15%;
-    right: 83%;
-    border: 2px solid rgba(255,255,255,0.75);
-    box-shadow: 0 0 10px 3px white;
-}
-
-.night-img {
-    max-width: 350px;
-    position: fixed;
-    top: 27%;
-    left: 73%;
-    border: 2px solid rgba(255,255,255,0.75);
-    box-shadow: 0 0 10px 3px white; 
-}
-.cat-img {
-    max-width: 350px;
-    position: fixed;
-    top: 27%;
-    left: 73%;
-    border: 2px solid rgba(255,255,255,0.75);
-    box-shadow: 0 0 10px 3px white; 
-}
-
-.mythologi-img {
-    max-width: 200px;
-    position: fixed;
-    top: 27%;
-    left: 73%;
-    border: 2px solid rgba(255,255,255,0.75);
-    box-shadow: 0 0 10px 3px white; 
-}
-
-
 @media(max-width:700px){ /*Här har jag redigerat olika elements storlek så att de ser får plats även på mobil. 
     Bilderna på "interest"-tabben har jag tagit bort helt eftersom det inte finns tillräckligt plats på mobil */
    
@@ -247,8 +206,17 @@ ul {
         font-size: 12px;
     }
     .text-box {
-        width: 70%;
+        padding: auto;
+        width: 80%;
     }
+    
+    .text-start h2 {
+        font-size: 30px;
+    }
+    .text-start p {
+        font-size: 20px;
+    }
+
     ul li {
         font-size: 12px;
     }
@@ -269,9 +237,9 @@ ul {
         width: 100px;
         position: relative;
     }
-    /*Eftersom en mobilskärm inte har så mycket plats på bredden så tar jag bort eller gömmer 
-    alla bilder förutom ag-logan eftersom den är placerad inom textboxen och sticker inte ut. 
-    Jag gömmer bilderna på mobilversionen genom att ställa in display till none*/
+    /*Eftersom en mobilskärm inte har så mycket plats på bredden så gömmer jag alla bilder förutom 
+    ag-logan eftersom den är placerad inom textboxen och sticker inte ut. Jag gömmer bilderna på 
+    mobilversionen genom att ställa in display till none*/
     .book-img {
         display: none;
         }
@@ -281,19 +249,9 @@ ul {
     .movies-img {
         display: none;
     }
-    .autumn-img {
+    .music-img {
         display: none;
     }
-    .night-img {
-        display: none;
-    }
-    .cat-img {
-        display: none;
-    }
-    .mythologi-img {
-        display: none;
-    }
-    
 }
 
 
