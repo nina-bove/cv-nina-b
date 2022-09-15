@@ -1,0 +1,299 @@
+/*Här har jag importerat en font från Google fonts så att jag kan använda den i min CSS */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+*{ /*Jag kommer ha samma font och mellanrum mellan bokstäverna på alla element*/
+    margin: 0;
+    padding: 0;
+    font-family: Orbitron, sans-serif; 
+    letter-spacing: 0.1em;
+}
+
+body { /* Här står sånt som påverkar alla element inom body-elementet, dvs allt som kommer synas på webbsidan*/
+    min-height: 100vh; /* Betyder 100 viewport height*/
+    width: 100%; /* Täcker hela sidan på bredden*/
+    display: flex; /* Gör att man kan använda flexbox*/
+    flex-direction: column; /* Vilken flexbox-riktning, comlumn=vertikal*/
+    justify-items: center; /* Placeras i center i den riktning som jag har angett ovan, i detta fall vertikalt*/
+    align-items: center; /* Placeras i center, andra riktningen. Eftersom riktningen jag angav ovan är 
+    column (vertikal) så blir justify-items i detta fallet x-axeln, och align-items y-axeln */
+    background-image: url("https://cdn.pixabay.com/photo/2017/04/10/10/08/universe-2218012_960_720.jpg"); /* bakgrundsbild
+    och nedan är placering och storlek på backgrundsbilden*/
+    background-position: center; 
+    background-size: cover;
+    position: relative; 
+}
+
+h1 {
+    font-size: 60px; /* Textstorlek på alla h1-element dvs största rubrikerna*/
+    font-family: Orbitron, sans-serif; /*Onödig, ta bort senare*/
+    color: rgba(255,255,255); /* Textfärg för h1-element*/
+    padding: 0;
+    margin: 0.5em; /* Hur mycket avstånd mellan detta elementet och andra. em är ett mått/enhet som beror på textstorleken*/
+    text-shadow: 0.05em 0.1em rgba(11, 75, 79, 0.75); /*Skugga bakom texten för att få en 3D effekt. 
+    3 första talen i parantesen efter rgba bestämmer färgen, fjärde bestämmer transparens (skala 0 till 1).
+    Eftersom jag använder em som enhet istället för px så kan jag copy-paste denna rad till alla element som 
+    ska ha text-shadow även om de har olika font-size eftersom storleken anpassas till elementets fonts-size*/
+}
+
+h2 { /* Textstorlek och skugga för alla h2-element (mindre rubriker/underrubriker)*/
+    font-size: 30px;
+    text-shadow: 0.05em 0.1em rgba(11, 75, 79, 0.75);
+}
+
+p { /* Textstorlek för alla p-element (paragrafer)*/
+    font-size: 15px;
+}
+
+nav { /* Placering av nav-element (navigation-bar med länkar till olika delar av webbsidan) med flexbox*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+a { /* Ändrar utseendet på länkar (inte de i navbaren dock, det påverkar egentligen bara min mailadress)*/
+    color: rgba(255,255,255);
+    text-decoration: none;
+    text-shadow: 0.05em 0.1em rgba(11, 75, 79, 0.75);
+
+}
+
+ul {
+    list-style-type: none; /* Tar bort "bulletpoints" från listor*/
+}
+
+.menu-tabs { /*menu-tabs =  navbar*/
+    flex: 1;
+    text-align: center; /*Texten är placerad i mitten av elemetet */
+    font-size: 20px;
+}
+
+.menu-tabs ul li { /*"listpunkter" eller raderna i listorna*/
+    list-style: none; 
+    display: inline-block;
+    padding: 8px 10px;
+    position: relative;
+    text-transform: uppercase; /*Gör all text inom "list-punkterna"*/
+}
+
+.menu-tabs ul li::after { /*Effekt på navbar-tabs innan man pekar på de. I mitt fall är det en linje 
+    under texten när man har pilen över en tab*/
+    content: ''; /*Linjen*/
+    width: 0%; /* Bredden på linjen, hur lång den är. Just nu är den 0% eller osynlig*/
+    height: 1px; /*Höjden på linjen dvs hur tjock den är*/
+    background: rgb(255, 255, 255); /*Färg på linjen*/
+    display: block; /* */
+    transition: 0.3s; /* */
+}
+.menu-tabs ul li:hover::after { /*Effekt på navbar-tabs när man har pilen på de. Linjen under texten går från 0% till 100%*/
+    width: 100%;
+}
+
+.menu-current-tab { /* En linje under den sida/tab man är inne på. Border är egentligen en kant/ram med upp 4 sidor man kan styla.
+    Jag stylar bara border-bottom så det syns som en enkel vit linje under texten i navbaren*/
+    border-bottom: 1px rgb(255, 255, 255) solid; /*Tjocklek, färg och style på linjen*/
+}
+
+.menu-tabs ul li a { /* Onödig, ta bort senare*/
+    color: white;
+}
+
+.text-box { /*Textrutor för p-element och ul-element, deras färg, storlek och placering*/
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    color: rgb(255, 255, 255);
+    text-shadow: 0.05em 0.1em rgba(11, 75, 79, 0.75);
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding: 2em;
+    box-shadow: 0 0 10px 3px white;
+}
+.text-start { /*Textruta för bara startsidan eftersom det är en stor skillnad på mängden text på startsidan jämfört med de andra sidorna. 
+    Det som skiljer sig från den andra textrutan är bara top (placering på höjden) och padding (plats runt texten)*/
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    color: rgb(255, 255, 255);
+    text-shadow: 0.05em 0.1em rgba(11, 75, 79, 0.75);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding: 3em;
+    box-shadow: 0 0 10px 3px white;
+}
+
+.text-start h2 { /*Textstolek för de h2-element som finns inom texboxen för startsidan*/
+    font-size: 50px;
+}
+.text-start p { /*Textstolek för de p-element som finns inom texboxen för startsidan*/
+    font-size: 20px;
+}
+
+.contacts { /*Placering och utseende för kontaktuppgifter längst ner på sidan*/
+    text-align: center;
+    position: fixed;
+    bottom: 5%;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    
+}
+
+.ag-logo { /*Storlek och position på ag-logo för "Kurser"-taben*/
+    width: 150px;
+    position: relative;
+
+}
+
+.book-img { /*Storlek, placering och skugga för book-img för "Interests"-tabben*/
+    max-width: 350px;
+    position: fixed;
+    top: 27%;
+    right: 73%;
+    border: 2px solid rgba(255,255,255,0.75);
+    box-shadow: 0 0 10px 3px white;
+}
+
+.puzzle-img { /*Storlek, placering och skugga för puzzle-img för "Intressen"-tabben*/
+    max-width: 350px;
+    position: fixed;
+    top: 53%;
+    right: 73%;
+    border: 2px solid rgba(255,255,255,0.75);
+    box-shadow: 0 0 10px 3px white;
+}
+
+.movies-img { /*Storlek, placering och skugga för movies-img för "intressen"-tabben*/
+    max-width: 350px;
+    position: fixed;
+    top: 27%;
+    left: 73%;
+    border: 2px solid rgba(255,255,255,0.75);
+    box-shadow: 0 0 10px 3px white;
+}
+
+.music-img { /*Storlek, placering och skugga för music-img för "Intressen"-tabben*/
+    max-width: 350px;
+    position: fixed;
+    top: 57%;
+    left: 73%;
+    border: 2px solid rgba(255,255,255,0.75);
+    box-shadow: 0 0 10px 3px white;
+}
+
+
+.autumn-img { /*Storlek, placering och skugga för autumn-img för "Om mig"-tabben*/
+    max-width: 200px;
+    position: fixed;
+    top: 15%;
+    right: 83%;
+    border: 2px solid rgba(255,255,255,0.75);
+    box-shadow: 0 0 10px 3px white;
+}
+
+.night-img {
+    max-width: 350px;
+    position: fixed;
+    top: 27%;
+    left: 73%;
+    border: 2px solid rgba(255,255,255,0.75);
+    box-shadow: 0 0 10px 3px white; 
+}
+.cat-img {
+    max-width: 350px;
+    position: fixed;
+    top: 27%;
+    left: 73%;
+    border: 2px solid rgba(255,255,255,0.75);
+    box-shadow: 0 0 10px 3px white; 
+}
+
+.mythologi-img {
+    max-width: 200px;
+    position: fixed;
+    top: 27%;
+    left: 73%;
+    border: 2px solid rgba(255,255,255,0.75);
+    box-shadow: 0 0 10px 3px white; 
+}
+
+
+@media(max-width:700px){ /*Här har jag redigerat olika elements storlek så att de ser får plats även på mobil. 
+    Bilderna på "interest"-tabben har jag tagit bort helt eftersom det inte finns tillräckligt plats på mobil */
+   
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 12px;
+    }
+    a {
+        font-size: 12px;
+    }
+    .text-box {
+        width: 70%;
+    }
+    ul li {
+        font-size: 12px;
+    }
+    .menu-tabs ul li a{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: space-around;
+        text-align: center;
+        width: 100%;
+        gap: 20px, 10px;
+        color: rgb(255, 255, 255);
+        font-size: 15px;
+    }
+  
+    .ag-logo { /*Mindre storlek på ag-logo för "Kurser"-tabben*/
+        width: 100px;
+        position: relative;
+    }
+    /*Eftersom en mobilskärm inte har så mycket plats på bredden så tar jag bort eller gömmer 
+    alla bilder förutom ag-logan eftersom den är placerad inom textboxen och sticker inte ut. 
+    Jag gömmer bilderna på mobilversionen genom att ställa in display till none*/
+    .book-img {
+        display: none;
+        }
+    .puzzle-img {
+        display: none;
+    }
+    .movies-img {
+        display: none;
+    }
+    .autumn-img {
+        display: none;
+    }
+    .night-img {
+        display: none;
+    }
+    .cat-img {
+        display: none;
+    }
+    .mythologi-img {
+        display: none;
+    }
+    
+}
+
+
