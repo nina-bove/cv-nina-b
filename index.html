@@ -1,17 +1,18 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!--Vilket programmeringspråk, DOCTYPE html betyder att jag använder den nyaste versionen av html-->
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale: 1.0, user-scalable: no">
-    <meta charset="UTF-8"/>
+  <head><!--Inom head finns information om innehållet av sidan t.ex. sidans bredd, skala, titel och UTF-8 gör att man kan använda bokstäverna å ä ö. Det som står här syns inte på själva webbsidan för de som besöker, förutom titeln, den syns på tabben-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
     <title>Startsida - Nina Bové's CV</title>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="./css/style.css"/>
   </head>
 
-  <body class="background-img">
-    <h1>CV - Nina Bové</h1>
-      <nav>
-        <div class="menu-tabs">
-          <ul>
+  <body><!--Här finns alla element som kommer synas på sidan-->
+    <h1>CV - Nina Bové</h1><!--Rubrik på sidan, h1 är största rubriken-->
+      <nav><!--navigationbar som länkar till de olika sidorna-->
+        <div class="menu-tabs"> <!--Div så jag kan redigera allt inom den med en klass. Menutabs är min nav-bar som finns under rubriken 
+          på varje sida och visar de olika sidorna/länkarna. Alla sidor förutom den sida man är på har samma css klass. -->
+          <ul> <!--Unorded list = punktlista (har tagit bort punkterna dock)-->
             <li><a href="index.html" class="menu-current-tab">Start</a></li>
             <li><a href="courses.html">Kurser</a></li>
             <li><a href="me.html">Om mig</a></li>
@@ -21,13 +22,15 @@
         </div>
       </nav>
 
-    <div class="text-start">
+    <div class="text-start"><!--Just Startsidan har en annan text-box som heter text-start för det är mycket mindre text på denna sidan 
+      jämfört med de andra. h2 är en underrubrik, mindre än h1 men större än h3. br betyder break, man hoppar ner en rad. p står för paragraf, bara vanlig text-->
       <h2>Välkommen till min webbsida</h2>
       <br>
       <p>Här finns information om mig, min undervisning och projekt</p>
     </div>
     
-    <div class="contacts">
+    <div class="contacts"><!--Kontaktuppgifter, vilket är bara min skolmail. Finns längst ner på alla sidor. "mailto:" gör att man kan skriva
+       mail genom att bara klicka på den.-->
       <p>Kontaktuppgifter:<br><a href="mailto: nina.bove.gbg22@amerikanska.gymnasiet.se">nina.bove.gbg22@amerikanskagymnasiet.se</a></p>
     </div>
 

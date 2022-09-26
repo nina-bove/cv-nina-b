@@ -26,7 +26,6 @@ body { /* Här står sånt som påverkar alla element inom body-elementet, dvs a
 h1 {
     font-size: 60px; /* Textstorlek på alla h1-element dvs största rubrikerna*/
     color: rgba(255,255,255); /* Textfärg för h1-element*/
-    padding: 0; /*ingen padding*/
     margin: 0.5em; /* Hur mycket avstånd mellan detta elementet och andra. em är ett mått/enhet som beror på textstorleken*/
     text-shadow: 0.05em 0.1em rgba(11, 75, 79, 0.75); /*Skugga bakom texten för att få en 3D effekt. 
     3 första talen i parantesen efter rgba bestämmer färgen, fjärde bestämmer transparens (skala 0 till 1).
@@ -191,7 +190,7 @@ ul {
 
 
 @media(max-width:700px){ /*Här har jag redigerat olika elements storlek så att de ser får plats även på mobil. 
-    Bilderna på "interest"-tabben har jag tagit bort helt eftersom det inte finns tillräckligt plats på mobil */
+    Bilderna på "interests"-tabben har jag gömt eftersom det inte finns tillräckligt plats på mobil */
    
     h1 {
         font-size: 30px;
@@ -207,7 +206,7 @@ ul {
     }
     .text-box {
         padding: auto;
-        width: 80%;
+        width: 75%;
     }
     
     .text-start h2 {
