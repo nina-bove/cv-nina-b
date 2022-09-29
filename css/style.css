@@ -129,10 +129,10 @@ ul {
     box-shadow: 0 0 10px 3px white;
 }
 
-.text-start h2 { /*Textstolek för de h2-element som finns inom texboxen för startsidan*/
+.text-start h2 { /*Textstolek för de h2-element som finns inom texboxen på startsidan*/
     font-size: 50px;
 }
-.text-start p { /*Textstolek för de p-element som finns inom texboxen för startsidan*/
+.text-start p { /*Textstolek för de p-element som finns inom texboxen på startsidan*/
     font-size: 20px;
 }
 
@@ -146,13 +146,13 @@ ul {
     
 }
 
-.ag-logo { /*Storlek och position på ag-logo för "Kurser"-taben*/
+.ag-logo { /*Storlek och position på ag-logo för "Kurser"-sidan*/
     width: 150px;
     position: relative;
 
 }
 
-.book-img { /*Storlek, placering och skugga för book-img för "Interests"-tabben*/
+.book-img { /*Storlek, placering och skugga för book-img för "Interests"-sidan*/
     max-width: 350px;
     position: fixed;
     top: 27%;
@@ -161,7 +161,7 @@ ul {
     box-shadow: 0 0 10px 3px white;
 }
 
-.puzzle-img { /*Storlek, placering och skugga för puzzle-img för "Intressen"-tabben*/
+.puzzle-img { /*Storlek, placering och skugga för puzzle-img för "Intressen"-sidan*/
     max-width: 350px;
     position: fixed;
     top: 53%;
@@ -170,7 +170,7 @@ ul {
     box-shadow: 0 0 10px 3px white;
 }
 
-.movies-img { /*Storlek, placering och skugga för movies-img för "intressen"-tabben*/
+.movies-img { /*Storlek, placering och skugga för movies-img för "intressen"-sidan*/
     max-width: 350px;
     position: fixed;
     top: 27%;
@@ -179,7 +179,7 @@ ul {
     box-shadow: 0 0 10px 3px white;
 }
 
-.music-img { /*Storlek, placering och skugga för music-img för "Intressen"-tabben*/
+.music-img { /*Storlek, placering och skugga för music-img för "Intressen"-sidan*/
     max-width: 350px;
     position: fixed;
     top: 57%;
@@ -189,8 +189,8 @@ ul {
 }
 
 
-@media(max-width:700px){ /*Här har jag redigerat olika elements storlek så att de ser får plats även på mobil. 
-    Bilderna på "interests"-tabben har jag gömt eftersom det inte finns tillräckligt plats på mobil */
+@media(max-width:700px){ /*Här har jag redigerat olika elements storlek så att de får plats även på mobil. 
+    Bilderna på "interests"-sidan har jag gömt helt eftersom det inte finns tillräckligt plats på mobil */
    
     h1 {
         font-size: 30px;
@@ -222,7 +222,7 @@ ul {
     .menu-tabs ul li a{
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: wrap; /*Raden med tabs i menubaren delas och blir två rader under varandra för att ta mindre plat*/
         justify-content: center;
         align-items: space-around;
         text-align: center;
